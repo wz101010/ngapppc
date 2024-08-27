@@ -1,0 +1,40 @@
+{
+  "name": "ng-app1-pc",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder --publish always"
+  },
+  "build": {
+    "appId": "com.ngapp.yourapp",
+    "publish": [
+      {
+        "provider": "generic",
+        "url": "https://gitee.com/seven1986/ng18seed/releases/"
+      }
+    ],
+    "directories": {
+      "output": "dist_app"
+    },
+    "files": [
+      "dist/**/*",
+      "main.js"
+    ],
+    "mac": {
+      "category": "your.app.category.type"
+    },
+    "win": {
+      "target": "nsis"
+    }
+  },
+  "devDependencies": {
+    "electron": "23.3.13",
+    "electron-builder": "24.13.3"
+  },
+  "dependencies": {
+    "electron-updater": "^6.2.1",
+    "express": "^4.19.2"
+  }
+}
